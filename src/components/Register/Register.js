@@ -41,6 +41,12 @@ class Register extends React.Component {
             })
     }
     
+    onEnterPressed = (e) => {
+        if(e.key === 'Enter'){
+            this.onSubmitSignIn();
+          }
+    }
+
     render() {
         return (
             <article className="br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center">
@@ -76,6 +82,7 @@ class Register extends React.Component {
                                     name="password"  
                                     id="password"
                                     onChange={this.onPasswordChange}
+                                    onKeyPress={(e) => this.onEnterPressed(e)}
                                 />
                             </div>
                         </fieldset>

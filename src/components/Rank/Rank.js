@@ -1,16 +1,33 @@
 import React from 'react';
 
 const Rank = ({name, entries}) => {
-    return (
-        <div>
-            <div className='white f3'>
-                {name}{', your current entry count is...'}
+    if (entries < 10) {
+        return (
+            <div>
+                <div className='white f3'>
+                    {name}{', your current entry count is...'}
+                </div>
+                <div className='white f1'>
+                    {entries}
+                </div>
             </div>
-            <div className='white f1'>
-                {entries}
+        );
+    } else {
+        return (
+            <div>
+                <div className='white f3'>
+                    {name}{', your current entry count is...'}
+                </div>
+                <div className='white f1'>
+                    {entries}
+                </div>
+                <div className='white f2 b'>
+                    {'You reached the limit of detections. Thank you for using the app!'}
+                </div>
             </div>
-        </div>
-    );
+        );
+    }
+    
 }
 
 export default Rank;

@@ -35,6 +35,12 @@ class Signin extends React.Component {
             })
     }
 
+    onEnterPressed = (e) => {
+        if(e.key === 'Enter'){
+            this.onSubmitSignIn();
+          }
+    }
+
     render() {
         const { onRouteChange } = this.props;
         return (
@@ -61,6 +67,7 @@ class Signin extends React.Component {
                                     name="password" 
                                     id="password"
                                     onChange={this.onPasswordChange}
+                                    onKeyPress={(e) => this.onEnterPressed(e)}
                                 />
                             </div>
                         </fieldset>
